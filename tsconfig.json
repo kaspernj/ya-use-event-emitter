@@ -8,7 +8,7 @@
     "outDir": "build",
     "target": "ES2022",
     "lib": ["ES2022", "DOM"],
-    "types": ["jasmine"],
+    "types": ["jasmine", "node", "react", "react-test-renderer"],
     "skipLibCheck": true
   },
   "include": ["src/**/*.js", "spec/**/*.js"]

@@ -1,6 +1,7 @@
 module.exports = {
   env: {
     es2022: true,
+    jasmine: true,
     node: true
   },
   extends: ["eslint:recommended", "plugin:jsdoc/recommended"],
