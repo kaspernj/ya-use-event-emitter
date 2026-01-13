@@ -1,6 +1,6 @@
 /* eslint-disable sort-imports */
 import useEnvSense from "env-sense/build/use-env-sense.js"
-import {useEffect, useLayoutEffect, useMemo} from "react"
+import {useEffect, useLayoutEffect} from "react"
 
 /**
  * @param {object} events
@@ -12,16 +12,11 @@ export default function useEventEmitter(events, event, onCalled) {
   const {isServer} = useEnvSense()
   const useWorkingEffect = isServer ? useEffect : useLayoutEffect
 
-  // useMemo to instantly connect
-  useMemo(() => {
-    if (events) {
-      events.addListener(event, onCalled)
-    }
-  }, [events, event, onCalled])
-
-  // useLayoutEffect to disconnect when unmounted or changed
+  // useLayoutEffect to connect after commit and disconnect on cleanup
   useWorkingEffect(() => {
     if (events) {
+      events.addListener(event, onCalled)
+
       return () => {
         events.removeListener(event, onCalled)
       }
