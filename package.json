@@ -4,8 +4,12 @@
   "type": "module",
   "description": "React hook for subscribing to EventEmitter events with environment-aware cleanup",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "exports": {
-    ".": "./src/index.js"
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
   },
   "files": [
     "src/**"

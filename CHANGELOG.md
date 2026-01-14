@@ -4,3 +4,4 @@
 - Added a TypeScript build script that emits compiled output.
 - Unified TypeScript config for build and typecheck.
 - Added Jasmine coverage for the event emitter hook.
+- Added TypeScript declarations for use-event-emitter.
