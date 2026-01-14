@@ -1,6 +1,6 @@
 {
   "name": "ya-use-event-emitter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "description": "React hook for subscribing to EventEmitter events with environment-aware cleanup",
   "main": "src/index.js",
