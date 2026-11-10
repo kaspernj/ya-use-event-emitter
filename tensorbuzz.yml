@@ -1,0 +1,18 @@
+before_script:
+  - npm install
+script:
+  - npm run lint
+  - npm run typecheck
+  - npm test
+
+# One build lane: lint, typecheck and jasmine over src/ and spec/. `paths`
+# scopes that lane to the files it consumes; a change to any of them, to this
+# file, or a changed-file list TensorBuzz cannot read runs the build anyway.
+# Negations must stay quoted - an unquoted `!pattern` parses as a YAML tag.
+paths:
+  - "src/**"
+  - "spec/**"
+  - "package.json"
+  - "package-lock.json"
+  - "tsconfig.json"
+  - ".eslintrc.cjs"
